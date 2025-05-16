@@ -57,7 +57,11 @@ function Header() {
               <Avatar className="size-10">
                 <AvatarImage src="/images/user-profile.png" />
                 <AvatarFallback>
-                  {user.fullname[0] + (user.fullname.split(" ")[1][0] || " ")}
+                  {user.fullname[0] +
+                    (user.fullname.split(" ")[1] &&
+                    user.fullname.split(" ")[1].length > 0
+                      ? user.fullname.split(" ")[1][0] || " "
+                      : " ")}
                 </AvatarFallback>
               </Avatar>
             </DropdownMenuTrigger>
@@ -66,7 +70,11 @@ function Header() {
                 <Avatar className="w-8 h-8">
                   <AvatarImage src="/images/user-profile.png" />
                   <AvatarFallback>
-                    {user.fullname[0] + user.fullname.split(" ")[1][0]}
+                    {user.fullname[0] +
+                      (user.fullname.split(" ")[1] &&
+                      user.fullname.split(" ")[1].length > 0
+                        ? user.fullname.split(" ")[1][0] || " "
+                        : " ")}
                   </AvatarFallback>
                 </Avatar>
                 <span className="text-lg font-semibold">{user.fullname}</span>
@@ -117,7 +125,11 @@ function Header() {
               <Avatar className="size-10">
                 <AvatarImage src="/images/user-profile.png" />
                 <AvatarFallback>
-                  {user.fullname[0] + (user.fullname.split(" ")[1][0] || " ")}
+                  {user.fullname[0] +
+                    (user.fullname.split(" ")[1] &&
+                    user.fullname.split(" ")[1].length > 0
+                      ? user.fullname.split(" ")[1][0] || " "
+                      : " ")}
                 </AvatarFallback>
               </Avatar>
             ) : (
@@ -137,7 +149,11 @@ function Header() {
                         <Avatar className="w-8 h-8">
                           <AvatarImage src="/images/user-profile.png" />
                           <AvatarFallback>
-                            {user.fullname[0] + (user.fullname.split(" ")[1][0] || " ")}
+                            {user.fullname[0] +
+                              (user.fullname.split(" ")[1] &&
+                              user.fullname.split(" ")[1].length > 0
+                                ? user.fullname.split(" ")[1][0] || " "
+                                : " ")}
                           </AvatarFallback>
                         </Avatar>
                         <span className="text-lg font-semibold">
