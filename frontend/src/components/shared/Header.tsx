@@ -24,7 +24,7 @@ import Image from "next/image";
 function Header() {
   const { user, logout, token, isAdmin } = useAuthStore();
   return (
-    <div className="flex justify-between items-center p-2 px-6 border-b-2 max-w-[1700px] mx-auto sticky top-0 z-20 bg-gray-100">
+    <div className="flex justify-between items-center p-2 px-6 border-b-2 w-full mx-auto sticky top-0 z-20 bg-gray-100">
       <div className="contents">
         <Link href={"/"} className="flex items-center gap-2">
           <Image
