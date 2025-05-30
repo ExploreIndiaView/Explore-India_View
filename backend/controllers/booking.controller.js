@@ -78,7 +78,7 @@ export const verifyPayment = async (req, res, next) => {
             const cashbackAmount = Math.floor(PackagePrice * cashbackPercentage); // Calculate cashback and limit to 2 decimal places
             userToUpdate.CashbackAmount += parseInt(cashbackAmount); // Ensure it's added as a number
             userToUpdate.CashbackDetail.push({
-                amount: cashbackAmount,
+                amount: parseInt(cashbackAmount),
                 date: new Date()
             });
             await userToUpdate.save();
