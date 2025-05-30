@@ -270,6 +270,7 @@ export const checkAdmin = async (req, res, next) => {
 
         return res.status(200).json({
             message: "Admin is authenticated",
+            isAdmin:true,
             user: {
                 id: user._id,
                 fullname: user.fullname,
