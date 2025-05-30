@@ -34,6 +34,9 @@ export default ProtectRoute;
 export const requireAdmin = async (req, res, next) => {
     try {
         const currentUser = req.user;
+        if(!currentUser){
+            return res.status(401).json({ message: "Unauthorized - User is not logged in", currentUser });
+        }
         const isAdmin = process.env.ADMIN_NUMBERS.includes(currentUser.mobile);
 
         if (!isAdmin) {
