@@ -1261,11 +1261,11 @@ export const TOPSERVICES = [
     image: "/images/camping1.jpg",
     path: "/camping_hiking",
   },
-  {
-    name: "Flight Service",
-    image: "/images/airline1.jpg",
-    path: "/airline",
-  },
+  // {
+  //   name: "Flight Service",
+  //   image: "/images/airline1.jpg",
+  //   path: "/airline",
+  // },
   {
     name: "Railway Service",
     image: "/images/train1.jpg",
@@ -1293,32 +1293,32 @@ export const RAILWAYIMAGES = [
   },
 ];
 
-export const AIRLINESERVICES = [
-  {
-    name: "Delhi - Jaipur",
-  },
-  {
-    name: "Jaipur - Delhi",
-  },
-  {
-    name: "Delhi - Agra",
-  },
-  {
-    name: "Agra - Delhi",
-  },
-  {
-    name: "Mumbai - Jaipur",
-  },
-  {
-    name: "Jaipur - Mumbai",
-  },
-  {
-    name: "Mumbai - Agra",
-  },
-  {
-    name: "Agra - Mumbai",
-  },
-];
+// export const AIRLINESERVICES = [
+//   {
+//     name: "Delhi - Jaipur",
+//   },
+//   {
+//     name: "Jaipur - Delhi",
+//   },
+//   {
+//     name: "Delhi - Agra",
+//   },
+//   {
+//     name: "Agra - Delhi",
+//   },
+//   {
+//     name: "Mumbai - Jaipur",
+//   },
+//   {
+//     name: "Jaipur - Mumbai",
+//   },
+//   {
+//     name: "Mumbai - Agra",
+//   },
+//   {
+//     name: "Agra - Mumbai",
+//   },
+// ];
 
 export const TRAINSERVICES = [
   { name: "Delhi - Jaipur Express" },
@@ -1329,20 +1329,20 @@ export const TRAINSERVICES = [
   { name: "Ahmedabad - Jaipur Intercity" },
 ];
 
-export const AIRLINEIMAGES = [
-  {
-    image: "/images/airline1.jpg",
-    content: "Airline Service",
-  },
-  {
-    image: "/images/airline2.jpg",
-    content: "Airline Service",
-  },
-  {
-    image: "/images/airline3.jpg",
-    content: "Airline Service",
-  },
-];
+// export const AIRLINEIMAGES = [
+//   {
+//     image: "/images/airline1.jpg",
+//     content: "Airline Service",
+//   },
+//   {
+//     image: "/images/airline2.jpg",
+//     content: "Airline Service",
+//   },
+//   {
+//     image: "/images/airline3.jpg",
+//     content: "Airline Service",
+//   },
+// ];
 
 // One Day Tour
 export const ONEDAYTOUR = {
