@@ -3420,12 +3420,12 @@ export const TOPSERVICES = [
 ];
 
 export const OTHERSERVICES = [
-  {
-    name: "Flight Service",
-    image: "/images/airline1.jpg",
-    path: "https://linksredirect.com/?cid=230828&source=linkkit&url=https%3A%2F%2Fwww.happyeasygo.com%2Fflight%2F",
-    PoweredBy: "HappyEasyGo",
-  },
+  // {
+  //   name: "Flight Service",
+  //   image: "/images/airline1.jpg",
+  //   path: "https://linksredirect.com/?cid=230828&source=linkkit&url=https%3A%2F%2Fwww.happyeasygo.com%2Fflight%2F",
+  //   PoweredBy: "HappyEasyGo",
+  // },
   {
     name: "Railway Service",
     image: "/images/train1.jpg",
@@ -3455,32 +3455,32 @@ export const RAILWAYIMAGES = [
   },
 ];
 
-export const AIRLINESERVICES = [
-  {
-    name: "Delhi - Jaipur",
-  },
-  {
-    name: "Jaipur - Delhi",
-  },
-  {
-    name: "Delhi - Agra",
-  },
-  {
-    name: "Agra - Delhi",
-  },
-  {
-    name: "Mumbai - Jaipur",
-  },
-  {
-    name: "Jaipur - Mumbai",
-  },
-  {
-    name: "Mumbai - Agra",
-  },
-  {
-    name: "Agra - Mumbai",
-  },
-];
+// export const AIRLINESERVICES = [
+//   {
+//     name: "Delhi - Jaipur",
+//   },
+//   {
+//     name: "Jaipur - Delhi",
+//   },
+//   {
+//     name: "Delhi - Agra",
+//   },
+//   {
+//     name: "Agra - Delhi",
+//   },
+//   {
+//     name: "Mumbai - Jaipur",
+//   },
+//   {
+//     name: "Jaipur - Mumbai",
+//   },
+//   {
+//     name: "Mumbai - Agra",
+//   },
+//   {
+//     name: "Agra - Mumbai",
+//   },
+// ];
 
 export const TRAINSERVICES = [
   { name: "Delhi - Jaipur Express" },
@@ -3491,20 +3491,20 @@ export const TRAINSERVICES = [
   { name: "Ahmedabad - Jaipur Intercity" },
 ];
 
-export const AIRLINEIMAGES = [
-  {
-    image: "/images/airline1.jpg",
-    content: "Airline Service",
-  },
-  {
-    image: "/images/airline2.jpg",
-    content: "Airline Service",
-  },
-  {
-    image: "/images/airline3.jpg",
-    content: "Airline Service",
-  },
-];
+// export const AIRLINEIMAGES = [
+//   {
+//     image: "/images/airline1.jpg",
+//     content: "Airline Service",
+//   },
+//   {
+//     image: "/images/airline2.jpg",
+//     content: "Airline Service",
+//   },
+//   {
+//     image: "/images/airline3.jpg",
+//     content: "Airline Service",
+//   },
+// ];
 
 // One Day Tour
 export const ONEDAYTOUR = {
