@@ -1266,11 +1266,11 @@ export const TOPSERVICES = [
   //   image: "/images/airline1.jpg",
   //   path: "/airline",
   // },
-  {
-    name: "Railway Service",
-    image: "/images/train1.jpg",
-    path: "/train",
-  },
+  // {
+  //   name: "Railway Service",
+  //   image: "/images/train1.jpg",
+  //   path: "/train",
+  // },
   {
     name: "Hotel Service",
     image: "/images/hotel-1.jpg",
@@ -1278,20 +1278,20 @@ export const TOPSERVICES = [
   },
 ];
 
-export const RAILWAYIMAGES = [
-  {
-    image: "/images/train1.jpg",
-    content: "Train Service",
-  },
-  {
-    image: "/images/train2.jpg",
-    content: "Train Service",
-  },
-  {
-    image: "/images/train3.jpg",
-    content: "Train Service",
-  },
-];
+// export const RAILWAYIMAGES = [
+//   {
+//     image: "/images/train1.jpg",
+//     content: "Train Service",
+//   },
+//   {
+//     image: "/images/train2.jpg",
+//     content: "Train Service",
+//   },
+//   {
+//     image: "/images/train3.jpg",
+//     content: "Train Service",
+//   },
+// ];
 
 // export const AIRLINESERVICES = [
 //   {
@@ -1320,14 +1320,14 @@ export const RAILWAYIMAGES = [
 //   },
 // ];
 
-export const TRAINSERVICES = [
-  { name: "Delhi - Jaipur Express" },
-  { name: "Mumbai - Jaipur Superfast" },
-  { name: "Chennai - Jaipur Rajdhani" },
-  { name: "Kolkata - Jaipur Duronto" },
-  { name: "Hyderabad - Jaipur Special" },
-  { name: "Ahmedabad - Jaipur Intercity" },
-];
+// export const TRAINSERVICES = [
+//   { name: "Delhi - Jaipur Express" },
+//   { name: "Mumbai - Jaipur Superfast" },
+//   { name: "Chennai - Jaipur Rajdhani" },
+//   { name: "Kolkata - Jaipur Duronto" },
+//   { name: "Hyderabad - Jaipur Special" },
+//   { name: "Ahmedabad - Jaipur Intercity" },
+// ];
 
 // export const AIRLINEIMAGES = [
 //   {
