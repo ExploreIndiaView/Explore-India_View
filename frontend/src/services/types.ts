@@ -30,6 +30,50 @@ export type User = {
   }[];
 };
 
+export type RecommendedHotel = {
+    name: string;
+    location: string;
+    rating: number;
+    reviews: number;
+    price: number;
+    originalPrice: number;
+    discount: string;
+    image: string;
+    amenities: {
+        wifi?: boolean;
+        pool?: boolean;
+        spa?: boolean;
+        restaurant?: boolean;
+        gym?: boolean;
+        heritage?: boolean;
+        beach?: boolean;
+        ayurveda?: boolean;
+    };
+    type: string;
+};
+
+export type AllHotel = {
+    name: string;
+    location: string;
+    distance: string;
+    rating: number;
+    reviews: number;
+    price: number;
+    image: string;
+    amenities: {
+        wifi?: boolean;
+        pool?: boolean;
+        spa?: boolean;
+        restaurant?: boolean;
+        gym?: boolean;
+        heritage?: boolean;
+        beach?: boolean;
+        ayurveda?: boolean;
+        parking?: boolean;
+    };
+    cancellation: string;
+};
+
 export type UserInput = {
   fullname: string;
   mobile: string;
