@@ -23,12 +23,15 @@ import Image from "next/image";
 
 function Header() {
   const { user, logout, token, isAdmin } = useAuthStore();
+
   return (
-    <div className="flex justify-between items-center p-2 px-6 border-b-2 w-full mx-auto sticky top-0 z-20 bg-gray-100">
-      <div className="contents">
+    <div className="flex items-center justify-between p-2 px-6 border-b-2 w-full mx-auto sticky top-0 z-20 bg-white/10 backdrop-blur-md">
+
+      {/* Left: Logo */}
+      <div className="flex items-center">
         <Link href={"/"} className="flex items-center gap-2">
           <Image
-            priority={true}
+            priority
             src="/images/logo.png"
             width={200}
             height={150}
@@ -37,20 +40,43 @@ function Header() {
         </Link>
       </div>
 
-      {/* Desktop View */}
-      <div className="lg:flex items-center gap-10 hidden">
-        <Link href={"/"} className="text-xl font-bold ">
-          Home
-        </Link>
-        <Link href={"/about"} className="text-xl font-bold ">
-          About
-        </Link>
-        <Link href={"/package"} className="text-xl font-bold ">
-          Package
-        </Link>
-        <Link href={"/hotels"} className="text-xl font-bold ">
-          Hotels
-        </Link>
+      {/* Center: Nav Links */}
+     <div className="absolute left-1/2 transform -translate-x-1/2 lg:flex items-center gap-8 hidden">
+  <Link
+    href="/"
+    className="text-xl font-bold px-4 py-2 rounded-xl transition-all duration-300 ease-in-out hover:bg-grey-200  hover:scale-105"
+  >
+    Home
+  </Link>
+  <Link
+    href="/about"
+    className="text-xl font-bold px-4 py-2 rounded-xl transition-all duration-300 ease-in-out hover:bg-grey-200 hover:scale-105"
+  >
+    About
+  </Link>
+  <Link
+    href="/package"
+    className="text-xl font-bold px-4 py-2 rounded-xl transition-all duration-300 ease-in-out hover:bg-grey-200 hover:scale-105"
+  >
+    Package
+  </Link>
+  <Link
+    href="/hotels"
+    className="text-xl font-bold px-4 py-2 rounded-xl transition-all duration-300 ease-in-out hover:bg-grey-200 hover:scale-105"
+  >
+    Hotels
+  </Link>
+   <Link
+    href="/services"
+    className="text-xl font-bold px-4 py-2 rounded-xl transition-all duration-300 ease-in-out hover:bg-grey-200 hover:scale-105"
+  >
+    Services
+  </Link>
+</div>
+
+
+      {/* Right: Login/Signup or User Menu */}
+      <div className="flex items-center gap-6">
         {user && token ? (
           <DropdownMenu>
             <DropdownMenuTrigger className="cursor-pointer">
@@ -58,10 +84,7 @@ function Header() {
                 <AvatarImage src="/images/user-profile.png" />
                 <AvatarFallback>
                   {user.fullname[0] +
-                    (user.fullname.split(" ")[1] &&
-                    user.fullname.split(" ")[1].length > 0
-                      ? user.fullname.split(" ")[1][0] || " "
-                      : " ")}
+                    (user.fullname.split(" ")[1]?.[0] || "")}
                 </AvatarFallback>
               </Avatar>
             </DropdownMenuTrigger>
@@ -71,16 +94,14 @@ function Header() {
                   <AvatarImage src="/images/user-profile.png" />
                   <AvatarFallback>
                     {user.fullname[0] +
-                      (user.fullname.split(" ")[1] &&
-                      user.fullname.split(" ")[1].length > 0
-                        ? user.fullname.split(" ")[1][0] || " "
-                        : " ")}
+                      (user.fullname.split(" ")[1]?.[0] || "")}
                   </AvatarFallback>
                 </Avatar>
                 <span className="text-lg font-semibold">{user.fullname}</span>
               </div>
               <DropdownMenuLabel className="font-bold text-lg flex items-center justify-between">
-                <span>My Wallet</span> <span>₹{user.CashbackAmount}</span>
+                <span>My Wallet</span>
+                <span>₹{user.CashbackAmount}</span>
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem className="font-bold text-lg">
@@ -101,18 +122,21 @@ function Header() {
           </DropdownMenu>
         ) : (
           <>
-            <Link
-              href={"/login"}
-              className="text-xl font-semibold cursor-pointer underline underline-offset-1 text-blue-500"
-            >
-              Login
-            </Link>
-            <Link
-              href={"/signup"}
-              className="text-xl font-semibold cursor-pointer underline underline-offset-2 text-blue-500"
-            >
-              Sign Up
-            </Link>
+           <div className="flex items-center gap-4">
+  <Link
+    href={"/login"}
+    className="text-xl font-semibold text-black px-5 py-2 border border-white bg-[#c2c9d1] hover:bg-[#01091230] transition-all duration-200"
+  >
+    Login
+  </Link>
+  <Link
+    href={"/signup"}
+    className="text-xl font-semibold text-black px-5 py-2 border border-white bg-[#c2c9d1] hover:bg-[#01091230] transition-all duration-200"
+  >
+    Sign Up
+  </Link>
+</div>
+
           </>
         )}
       </div>
@@ -126,89 +150,45 @@ function Header() {
                 <AvatarImage src="/images/user-profile.png" />
                 <AvatarFallback>
                   {user.fullname[0] +
-                    (user.fullname.split(" ")[1] &&
-                    user.fullname.split(" ")[1].length > 0
-                      ? user.fullname.split(" ")[1][0] || " "
-                      : " ")}
+                    (user.fullname.split(" ")[1]?.[0] || "")}
                 </AvatarFallback>
               </Avatar>
             ) : (
               <Menu />
             )}
           </SheetTrigger>
+
           <SheetContent className="w-72">
             <SheetHeader>
               <SheetTitle className="text-2xl font-bold">
                 Explore India View
               </SheetTitle>
-              <div className="flex flex-col gap-5 mt-10 font-mono ">
-                {user && token && (
-                  <DropdownMenu>
-                    <DropdownMenuTrigger className="cursor-pointer">
-                      <div className="flex items-center gap-2 px-3 py-2">
-                        <Avatar className="w-8 h-8">
-                          <AvatarImage src="/images/user-profile.png" />
-                          <AvatarFallback>
-                            {user.fullname[0] +
-                              (user.fullname.split(" ")[1] &&
-                              user.fullname.split(" ")[1].length > 0
-                                ? user.fullname.split(" ")[1][0] || " "
-                                : " ")}
-                          </AvatarFallback>
-                        </Avatar>
-                        <span className="text-lg font-semibold">
-                          {user.fullname}
-                        </span>
-                      </div>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className="w-56" align="end">
-                      <DropdownMenuLabel className="font-bold text-lg flex items-center justify-between">
-                        <span>My Wallet</span>{" "}
-                        <span>₹{user.CashbackAmount}</span>
-                      </DropdownMenuLabel>
-                      <DropdownMenuSeparator />
-                      <DropdownMenuItem className="font-bold text-lg">
-                        <Link href={"/bookings"}>Bookings</Link>
-                      </DropdownMenuItem>
-                      {isAdmin && (
-                        <DropdownMenuItem className="font-bold text-lg">
-                          <Link href={"/admin"}>Admin</Link>
-                        </DropdownMenuItem>
-                      )}
-                      <DropdownMenuItem
-                        onClick={logout}
-                        className="text-red-600 font-bold text-lg flex items-center gap-2"
-                      >
-                        Logout <DoorOpen className="size-4" color="red" />
-                      </DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                )}
+              <div className="flex flex-col gap-5 mt-10 font-mono">
                 <Link href={"/"} className="text-xl font-semibold">
                   Home
                 </Link>
                 <Link href={"/about"} className="text-xl font-semibold">
                   About
                 </Link>
-                <Link href={"/package"} className="text-xl font-semibold ">
+                <Link href={"/package"} className="text-xl font-semibold">
                   Package
                 </Link>
-                <Link href={"/hotels"} className="text-xl font-semibold ">
+                <Link href={"/hotels"} className="text-xl font-semibold">
                   Hotels
                 </Link>
                 {!user && !token && (
                   <>
                     <Link
                       href={"/login"}
-                      className="text-xl font-semibold cursor-pointer underline underline-offset-1 text-blue-500"
+                      className="text-xl font-semibold text-blue-500 underline underline-offset-2"
                     >
                       Login
                     </Link>
                     <Link
                       href={"/signup"}
-                      className="text-xl font-semibold cursor-pointer underline underline-offset-2 text-blue-500"
+                      className="text-xl font-semibold text-blue-500 underline underline-offset-2"
                     >
-                      Sign-Up
+                      Sign Up
                     </Link>
                   </>
                 )}

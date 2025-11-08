@@ -6,7 +6,7 @@ import Link from "next/link";
 function AboutUs() {
   return (
     <div className="flex flex-col xl:grid grid-cols-2 justify-center p-8 bg-gradient-to-b from-gray-100 via-gray-200 to-gray-400 text-gray-800 gap-5 md:px-20">
-      <Image
+      {/* <Image
         src={
           "https://cdn.pixabay.com/photo/2018/01/23/12/07/water-palace-3101314_640.jpg"
         }
@@ -14,7 +14,7 @@ function AboutUs() {
         height={500}
         width={500}
         className="rounded-t-sm shadow-lg w-full"
-      />
+      /> */}
       <div className="xl:p-7">
         <h1 className="text-2xl md:text-4xl mt-5 font-bold font-serif">
           About Us

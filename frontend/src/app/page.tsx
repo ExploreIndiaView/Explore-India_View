@@ -9,6 +9,9 @@ import React, { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import InquirySection from "@/components/shared/InquirySection";
+import PrivateTours from "@/components/shared/PrivateTours";
+import ExclusiveOffers from "@/components/shared/ExclusiveOffer";
+import TravelersSay from "@/components/shared/TravelersSay";
 
 
 function page() {
@@ -22,10 +25,13 @@ function page() {
   return (
     <div data-aos='fade-up'>
       <Landing IMAGES={CAROUSELIMAGE} />
-      <Disclaimer/>
+      {/* <Disclaimer/> */}
       <Packages />
       <Services />
-      <AboutUs />
+      <PrivateTours/>
+      <ExclusiveOffers/>
+      <TravelersSay/>
+      {/* <AboutUs /> */}
       <InquirySection expand={true}/>
     </div>
   

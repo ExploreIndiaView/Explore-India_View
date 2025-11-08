@@ -1,176 +1,89 @@
-import {
-  ChevronRight,
-  Facebook,
-  Instagram,
-  Mail,
-  MapPlus,
-  MessageCircle,
-  PhoneCall,
-  Twitter,
-  Youtube,
-} from "lucide-react";
-import Link from "next/link";
 import React from "react";
+import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
+import Link from "next/link";
 
 function Footer() {
   return (
-    <div className="bg-[url(https://img.freepik.com/free-photo/abstract-wave-cyan-color-black-background_1268-28760.jpg?t=st=1706202170~exp=1706205770~hmac=c064fc4e73ad1a1e01a1f0782257b32e7a155abf6f8c97fe918c827d1c953e32&w=1060)] p-5 text-white bg-cover bg-no-repeat mt-5">
-      {/* content */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="bg-[#020817] text-white p-10 font-inter">
+      {/* 4-column Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Explore India */}
+        <div>
+          <h2 className="text-xl font-bold mb-4">Explore India</h2>
+          <p className="text-sm font-mono mb-3">
+            Your trusted partner for authentic Indian travel experiences. We create unforgettable journeys that showcase India's incredible diversity, culture, and natural beauty.
+          </p>
+          <p className="text-sm font-mono mb-1">+91 98765 43210</p>
+          <p className="text-sm font-mono mb-1">info@indiatours.com</p>
+          <p className="text-sm font-mono">New Delhi, India</p>
+        </div>
+
         {/* Quick Links */}
-        <div className="p-3">
-          <h1 className="text-xl font-bold font-serif">Quick Links</h1>
-          <div className="font-mono text-sm mt-2">
-            <Link
-              href={"/"}
-              className="flex items-center gap-2 hover:gap-5 transition-all duration-300"
-            >
-              <ChevronRight
-                size={15}
-                className="text-purple-800"
-                strokeWidth={5}
-              />
-              Home
-            </Link>
-            <Link
-              href={"/about"}
-              className="flex items-center gap-1 hover:gap-3 transition-all duration-300"
-            >
-              <ChevronRight
-                size={15}
-                className="text-purple-800"
-                strokeWidth={5}
-              />
-              About
-            </Link>
-            <Link
-              href={"/package"}
-              className="flex items-center gap-1 hover:gap-3 transition-all duration-300"
-            >
-              <ChevronRight
-                size={15}
-                className="text-purple-800"
-                strokeWidth={5}
-              />
-              Package
-            </Link>
-            <Link
-              href={"/hotels"}
-              className="flex items-center gap-1 hover:gap-3 transition-all duration-300"
-            >
-              <ChevronRight
-                size={15}
-                className="text-purple-800"
-                strokeWidth={5}
-              />
-              Hotels
-            </Link>
-            <Link
-              href={"/privacy-policy"}
-              className="flex items-center gap-1 hover:gap-3 transition-all duration-300"
-            >
-              <ChevronRight
-                size={15}
-                className="text-purple-800"
-                strokeWidth={5}
-              />
-              Privacy Policy
-            </Link>
-          </div>
+        <div>
+          <h2 className="text-xl font-bold mb-4">Quick Links</h2>
+          <ul className="text-sm font-mono space-y-1">
+            <li>About Us</li>
+            <li>Our Tours</li>
+            <li>Destinations</li>
+            <li>Private Tours</li>
+            <li>Reviews</li>
+            <li>Blog</li>
+          </ul>
         </div>
 
-        {/* Contact Information */}
-        <div className="p-3">
-          <h1 className="text-xl font-bold font-serif">Contact Information</h1>
-          <div className="text-sm font-mono mt-2">
-            <Link
-              href={"/"}
-              className="flex items-center gap-2 hover:gap-5 transition-all duration-300"
-            >
-              <PhoneCall
-                size={15}
-                className="fill-purple-700 text-purple-600"
-              />
-              +91 9588041628
-            </Link>
-            <Link
-              href={"/"}
-              className="flex items-center gap-2 hover:gap-5 transition-all duration-300"
-            >
-              <PhoneCall
-                size={15}
-                className="fill-purple-700 text-purple-600"
-              />
-              +91 8209598333
-            </Link>
-            <Link
-              href={"/"}
-              className="flex items-center gap-2 hover:gap-5 transition-all duration-300"
-            >
-              <PhoneCall
-                size={15}
-                className="fill-purple-700 text-purple-600"
-              />
-              +91 8426090454
-            </Link>
-            <Link
-              href={"/"}
-              className="flex items-center gap-2 hover:gap-5 transition-all duration-300"
-            >
-              <Mail size={15} className="fill-purple-700 text-white" />
-              exploreindiaview@gmail.com
-            </Link>
-            <Link
-              href={"/"}
-              className="flex items-center gap-2 hover:gap-5 transition-all duration-300"
-            >
-              <MapPlus size={15} className="fill-purple-700 text-purple-600" />
-              Rajasthan, India-302012
-            </Link>
-          </div>
+        {/* Popular Destinations */}
+        <div>
+          <h2 className="text-xl font-bold mb-4">Popular Destinations</h2>
+          <ul className="text-sm font-mono space-y-1">
+            <li>Rajasthan Tours</li>
+            <li>Kerala Backwaters</li>
+            <li>Golden Triangle</li>
+            <li>Himalayan Adventures</li>
+            <li>South India</li>
+            <li>North East India</li>
+          </ul>
         </div>
 
-        {/* Follow Us */}
-        <div className="p-3">
-          <h1 className="text-xl font-bold font-serif">Contact Information</h1>
-          <div className="text-sm font-mono mt-2">
-            <Link
-              href={"/"}
-              className="flex items-center gap-2 hover:gap-5 transition-all duration-300"
-            >
-              <Facebook size={15} className="fill-purple-700 text-purple-600" />
-              Facebook
-            </Link>
-            <Link
-              href={"/"}
-              className="flex items-center gap-2 hover:gap-5 transition-all duration-300"
-            >
-              <Twitter size={15} className="fill-purple-700 text-purple-600" />
-              Twitter
-            </Link>
-            <Link
-              href={"/"}
-              className="flex items-center gap-2 hover:gap-5 transition-all duration-300"
-            >
-              <Youtube size={15} className="fill-purple-700 text-purple-600" />
-              Youtube
-            </Link>
-            <Link
-              href={"/"}
-              className="flex items-center gap-2 hover:gap-5 transition-all duration-300"
-            >
-              <Instagram size={15} className="fill-purple-700 " />
-              Instagram
-            </Link>
-          </div>
-        </div>
+        {/* Stay Updated */}
+       {/* Stay Updated */}
+<div>
+  <h2 className="text-xl font-bold mb-4">Stay Updated</h2>
+  <p className="text-sm font-mono mb-3">
+    Subscribe to our newsletter for travel tips, exclusive deals, and destination insights.
+  </p>
+  <div className="flex mb-3 items-center gap-2">
+    <button className="bg-purple-600 px-4 py-2 rounded-md hover:bg-purple-700 transition-colors">
+      Subscribe
+    </button>
+    <input
+      type="email"
+      placeholder="Your email address"
+      className="p-2 rounded-md text-black flex-1"
+    />
+  </div>
+  <div className="flex gap-3 mt-2">
+    <Facebook size={20} className="cursor-pointer hover:text-purple-500" />
+    <Twitter size={20} className="cursor-pointer hover:text-purple-500" />
+    <Instagram size={20} className="cursor-pointer hover:text-purple-500" />
+    <Youtube size={20} className="cursor-pointer hover:text-purple-500" />
+  </div>
+</div>
+
       </div>
+
+      {/* Bottom Links */}
+      <div className="flex flex-wrap justify-center gap-9 text-sm mt-10 font-mono">
+        <Link href={"/"}>Help Center</Link>
+        <Link href={"/"}>Contact Us</Link>
+        <Link href={"/"}>Booking Support</Link>
+        <Link href={"/"}>Travel Insurance</Link>
+        <Link href={"/"}>Terms & Conditions</Link>
+        <Link href={"/"}>Privacy Policy</Link>
+      </div>
+
       {/* Copyright */}
-      <div className="font-serif text-sm mt-2">
-        <p className="text-center">
-          &copy; {new Date().getFullYear()} Incredible Tour To India. All rights
-          reserved.
-        </p>
+      <div className="text-center text-sm mt-6 font-mono">
+        © 2024 India Tours. All rights reserved. | Crafted with <span className="text-red-500">❤️</span> for incredible journeys
       </div>
     </div>
   );

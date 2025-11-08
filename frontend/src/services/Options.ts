@@ -1,4 +1,68 @@
 import { getRandomAdventureImage, getRandomIndexedImage } from "./Images";
+// Option.tsx
+import { Plane, Phone, ShieldCheck, MapPin, Calendar, Globe, House, Car } from "lucide-react";
+
+export const travelOptions = [
+  {
+    id: 1,
+    icon: Plane,
+    title: "Flight Bookings",
+    description:
+      "Domestic and international flight reservations with competitive prices and flexible options.",
+    features: ["Best price guarantee","24/7 support","Easy cancellation"],
+    popular: true,
+  },
+  {
+    id: 2,
+    icon: House,
+    title: "Hotel Reservations",
+    description:
+      "Handpicked accommodations from budget-friendly to luxury resorts across India..",
+    features: ["Verified properties",
+"Instant confirmation","Special rates"],
+    popular: true,
+  },
+
+  {
+    id: 3,
+    icon: Car,
+    title: "Transportation",
+    description:
+      "Reliable cab services, car rentals, and airport transfers for seamless travel.",
+      features: ["Licensed drivers",
+"Clean vehicles",
+"GPS tracking"],
+    popular: true,
+  },
+  {
+    id: 4,
+    icon: Phone,
+    title: "24/7 Travel Assistance",
+    description:
+      "Our support team is always available to ensure your journey stays smooth and stress-free.",
+    features: ["Live chat & phone", "Quick response", "Multilingual support"],
+    popular: true,
+  },
+  {
+    id: 5,
+    icon: Globe,
+    title: "Visa & Documentation",
+    description:
+      "Complete assistance for travel documents, visa processing, and embassy coordination.",
+    features: ["Fast processing", "Secure handling", "Transparent fees"],
+    popular: true,
+  },
+  {
+    id: 6,
+    icon: ShieldCheck,
+    title: "Travel Insurance",
+    description:
+      "Stay protected throughout your journey with our comprehensive travel insurance plans.",
+    features: ["Medical coverage", "Trip protection", "Global support"],
+    popular: true,
+  },
+];
+
 
 export const PACKAGES = [
   {
@@ -1005,27 +1069,74 @@ export const PACKAGES = [
   },
 ];
 
+export const PRIVATETOURS = [
+  {
+    id: 1,
+    logo: "/images/privatetourlogo.png",
+    name: "Rajasthan Private Tour",
+    description: "Experience royal palaces, desert adventures, and cultural charm.",
+    duration: "Duration",
+    days: "7 Days",
+    group: "Group Size",
+    people: "10 People",
+    priceLabel: "Price",
+    price: "₹18,000",
+    featuresLabel: "Included Features",
+    features: ["Luxury Hotels", "Guided City Tours", "Desert Safari", "Breakfast Included"],
+  },
+  {
+    id: 2,
+    logo: "/images/privatetourlogo.png",
+    name: "South India Explorer",
+    description: "Discover lush greenery, temples, and serene backwaters of the South.",
+    duration: "Duration",
+    days: "6 Days",
+    group: "Group Size",
+    people: "8 People",
+    priceLabel: "Price",
+    price: "₹15,000",
+    featuresLabel: "Included Features",
+    features: ["Deluxe Hotels", "Cultural Shows", "Private Transport", "Meals Included"],
+  },
+  {
+    id: 3,
+    logo: "/images/privatetourlogo.png",
+    name: "Himalayan Adventure",
+    description: "Embark on an unforgettable mountain escape with scenic trails.",
+    duration: "Duration",
+    days: "5 Days",
+    group: "Group Size",
+    people: "12 People",
+    priceLabel: "Price",
+    price: "₹20,000",
+    featuresLabel: "Included Features",
+    features: ["Mountain Camps", "Local Guide", "Campfire Nights", "Meals Included"],
+  },
+];
+
+
 // Our services
 export const SERVICES = [
   {
     __id: "2",
-    name: "Event Organizer",
+    name: "Rajasthan Tours",
     image: [
-      {
-        image: "/images/event.jpg",
-        content: "Event Organizer",
-      },
-      {
-        image: "/images/event2.jpg",
-        content: "Event Organizer",
-      },
-      {
-        image: "/images/event3.jpg",
-        content: "Event Organizer",
-      },
+      { image: "/images/event.jpg", content: "Event Organizer" },
+      { image: "/images/event2.jpg", content: "Event Organizer" },
+      { image: "/images/event3.jpg", content: "Event Organizer" },
     ],
-    Overview: `We are one of the reputed Event Organizers In Jaipur having expertise in organizing Private & Corporate Events. Our team has arranged a variety of events for clients in Jaipur (Rajasthan). We have expertise in all aspects of arranging an event. With us to help you & guide you, the event is guaranteed to be a success. We take care of every step – right from sending out invites , guest management, venue arrangement, finalizing the menu etc. Our expert team ensures that our customers are saved from the hassles of arranging the event, as we efficiently take care of all the aspects on their behalf.`,
+    description:
+      "We specialize in organizing private and corporate events in Jaipur, ensuring every occasion is memorable and hassle-free.",
+    price: "12,000",
+    experiences: [
+      "Luxury venue arrangements",
+      "Professional event planning",
+      "Customized décor and themes",
+      
+    ],
   },
+
+
   {
     __id: "3",
     name: "Car and Bike",
@@ -1256,27 +1367,18 @@ export const TOPSERVICES = [
     image: getRandomAdventureImage(),
     path: "/adventure",
   },
-  {
-    name: "Camping Hiking",
-    image: "/images/camping1.jpg",
-    path: "/camping_hiking",
-  },
-  // {
-  //   name: "Flight Service",
-  //   image: "/images/airline1.jpg",
-  //   path: "/airline",
-  // },
-  // {
-  //   name: "Railway Service",
-  //   image: "/images/train1.jpg",
-  //   path: "/train",
-  // },
-  {
-    name: "Hotel Service",
-    image: "/images/hotel-1.jpg",
-    path: "/hotels",
-  },
 ];
+
+  // {
+  //   name: "Camping Hiking",
+  //   image: "/images/camping1.jpg",
+  //   path: "/camping_hiking",
+  // },
+  // {
+  //   name: "Hotel Service",
+  //   image: "/images/hotel-1.jpg",
+  //   path: "/hotels",
+  // },
 
 // export const RAILWAYIMAGES = [
 //   {
