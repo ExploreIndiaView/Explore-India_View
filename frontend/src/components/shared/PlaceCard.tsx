@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   Card,
@@ -57,10 +59,12 @@ function PlaceCard({
         >
           View Details
         </Button>
+
         <Button
           size="sm"
           variant="outline"
           className="text-black hover:bg-blue w-[150px]"
+          onClick={() => navigate.push(`/booking/${pack.__id}`)}
         >
           Book Now
         </Button>

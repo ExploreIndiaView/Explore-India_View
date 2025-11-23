@@ -74,12 +74,12 @@ function Services() {
                       <span className="font-bold text-lg text-[#0f8dbb]">
                         ₹{service.price || "12,000"}
                       </span>
-                      <Button
-                        onClick={() => router.push(`/services/${service.__id}`)}
-                        className="bg-[#11A4D4] hover:bg-[#0f8dbb] text-white px-5 py-2  cursor-pointer"
-                      >
-                        Explore
-                      </Button>
+                     <Button
+  onClick={() => router.push(`/service/${service.__id}`)}
+  className="bg-[#11A4D4] hover:bg-[#0f8dbb] text-white px-5 py-2  cursor-pointer"
+>
+  Explore
+</Button>
                     </div>
                   </div>
                 </div>

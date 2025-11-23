@@ -2,6 +2,20 @@ import { getRandomAdventureImage, getRandomIndexedImage } from "./Images";
 // Option.tsx
 import { Plane, Phone, ShieldCheck, MapPin, Calendar, Globe, House, Car } from "lucide-react";
 
+export const BOOKINGS = [
+  {
+    __id: "1",
+    name: "Rajasthan Heritage Tour",
+    Overview: ["Explore the rich cultural heritage of Rajasthan..."],
+  },
+  {
+    __id: "2",
+    name: "Kerala Backwater Tour",
+    Overview: ["Relax in the scenic backwaters of Kerala..."],
+  },
+];
+
+
 export const travelOptions = [
   {
     id: 1,
