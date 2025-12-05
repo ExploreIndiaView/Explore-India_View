@@ -45,7 +45,7 @@ type BookingInput = {
 };
 
 function BookingCard({ props }: { props: Props }) {
-  const { user, token } = useAuthStore();
+  // const { user, token } = useAuthStore();
   const [input, setInput] = useState<BookingInput>({
     PackageName: props.PackageName,
     PackageDays: props.PackageDays,
@@ -61,6 +61,31 @@ function BookingCard({ props }: { props: Props }) {
   const [showScratchCard, setShowScratchCard] = useState(false);
   const [cashbackAmount, setCashbackAmount] = useState<number | null>(null);
   const router = useRouter();
+
+
+const [user, setUser] = useState<any>(null);
+const [token, setToken] = useState<string | null>(null);
+
+
+useEffect(() => {
+  // Load user on first render
+  if (typeof window !== "undefined") {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }
+
+  // Listen for updates from login/signup
+  const handleStorageChange = () => {
+    const updatedUser = localStorage.getItem("user");
+    setUser(updatedUser ? JSON.parse(updatedUser) : null);
+  };
+
+  window.addEventListener("storageChanged", handleStorageChange);
+
+  return () => window.removeEventListener("storageChanged", handleStorageChange);
+}, []);
 
   // Loading any scripts
   const loadScript = (src: string) => {
@@ -116,7 +141,8 @@ function BookingCard({ props }: { props: Props }) {
           { ...input, startDate: input.startDate.toISOString() },
           {
             headers: {
-              Authorization: `Bearer ${token}`,
+              Authorization: token ? `Bearer ${token}` : "",
+
             },
           }
         );

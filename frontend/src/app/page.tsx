@@ -12,6 +12,8 @@ import InquirySection from "@/components/shared/InquirySection";
 import PrivateTours from "@/components/shared/PrivateTours";
 import ExclusiveOffers from "@/components/shared/ExclusiveOffer";
 import TravelersSay from "@/components/shared/TravelersSay";
+import Package from "./package/page";
+import Place1 from "./places1/page";
 
 
 function page() {
@@ -26,7 +28,8 @@ function page() {
     <div data-aos='fade-up'>
       <Landing IMAGES={CAROUSELIMAGE} />
       {/* <Disclaimer/> */}
-      <Packages />
+      <Packages/>
+      <Place1/>
       <Services />
       <PrivateTours/>
       <ExclusiveOffers/>

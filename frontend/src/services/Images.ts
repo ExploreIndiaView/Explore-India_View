@@ -34,18 +34,13 @@ export const ADVENTUREIMAGES = [
   "/images/adventure10.jpg",
 ];
 
-const arr: number[] = [];
-export const getRandomIndexedImage = (): string => {
-  // get the images in random but not get the images which are already selected
-  const randomIndex = Math.floor(Math.random() * IMAGES.length);
-  if (arr.length > 0 && arr.includes(randomIndex)) {
-    return getRandomIndexedImage();
-  }
-  arr.push(randomIndex);
-  return IMAGES[randomIndex];
+// ---------- FIXED IMAGE GETTERS (NO RANDOM) ----------
+
+// Safe: cycles images without randomness
+export const getIndexedImage = (index: number): string => {
+  return IMAGES[index % IMAGES.length];
 };
 
-export const getRandomAdventureImage = (): string => {
-  const randomIndex = Math.floor(Math.random() * ADVENTUREIMAGES.length);
-  return ADVENTUREIMAGES[randomIndex];
+export const getAdventureImage = (index: number): string => {
+  return ADVENTUREIMAGES[index % ADVENTUREIMAGES.length];
 };

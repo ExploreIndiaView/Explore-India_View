@@ -2,6 +2,8 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
+
 
 const EXCLUSIVE_OFFERS = [
   {
@@ -37,6 +39,8 @@ const EXCLUSIVE_OFFERS = [
 ];
 
 function ExclusiveOffers() {
+  const router = useRouter();
+
   return (
     <div className="px-6 md:px-16 py-10 bg-gradient-to-r from-[#11A4D4] to-[#1ABC9C] text-white">
       {/* Heading */}
@@ -80,11 +84,13 @@ function ExclusiveOffers() {
             <p className="text-sm mb-4">Valid: Limited Time</p>
 
             {/* Claim Offer Button */}
-            <Button
-              className="bg-[#F97415] hover:bg-[#e56712] text-white px-5 py-2 rounded-lg"
-            >
-              Claim Offer
-            </Button>
+           <Button
+  className="bg-[#F97415] hover:bg-[#e56712] text-white px-5 py-2 rounded-lg"
+  onClick={() => router.push(`/offers/${offer.id}`)}
+>
+  Claim Offer
+</Button>
+
           </div>
         ))}
       </div>

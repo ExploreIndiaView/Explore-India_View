@@ -3,6 +3,7 @@ import HotelDeals from "@/components/shared/HotelDeals";
 import { useRouter } from "next/navigation";
 import React from "react";
 import Image from "next/image";
+import { HOTELS } from "@/services/Options";
 
 export default function Page() {
   const router = useRouter();
@@ -102,280 +103,92 @@ export default function Page() {
 </div>
 <HotelDeals/>
 {/* Hotels Found + Sort By */}
-<section className="w-full bg-white py-10">
-  <div className="max-w-6xl mx-auto flex items-center justify-between">
-    {/* Left */}
-    <div>
-      <h2 className="text-xl font-bold">2,847 hotels found</h2>
-      <p className="text-gray-600 text-sm">Best prices guaranteed</p>
-    </div>
-
-    {/* Right */}
-    <div className="flex items-center gap-2">
-      <span className="text-gray-700 font-medium">Sort by:</span>
-      <select className="border border-gray-300 rounded-md px-3 py-2">
-        <option>Price: Low to High</option>
-      </select>
-    </div>
-  </div>
-
-  {/* Hotel Cards List */}
-  <div className="max-w-6xl mx-auto mt-8 space-y-6">
-
-    {/* CARD */}
-    <div className="flex gap-5 border rounded-xl p-4 shadow-sm">
-      {/* Image */}
-      <div className="w-40 h-32 bg-gray-200 rounded-lg">
-   
-        <Image
-          src="/images/hotel8.png"   // replace with your image path
-          alt="Hotel image"
-          width={160}             // match w-40 (40 * 4 = 160px)
-          height={128}            // match h-32 (32 * 4 = 128px)
-          className="object-cover"
-        />
-
-
-      </div>
-
-      {/* Content */}
-      <div className="flex-1">
-        <h3 className="text-xl font-bold">Royal Plaza Hotel</h3>
-        <p className="text-gray-600 text-sm flex items-center gap-2">
-          ⭐ 4.5 <span className="text-gray-500">(1247)</span>
-        </p>
-
-        <p className="text-gray-500 text-sm">Connaught Place, New Delhi</p>
-        <p className="text-green-600 font-medium text-sm">Free cancellation</p>
-
-        <p className="text-gray-500 text-sm mt-1">0.5 km from India Gate</p>
-
-        {/* Icons */}
-        <div className="flex gap-3 text-sm text-gray-700 mt-2">
-          wifi · pool · gym · restaurant · spa
-        </div>
-
-        {/* Price + Buttons */}
-        <div className="mt-3 flex items-center justify-between">
+ <section className="w-full bg-white py-10">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div>
-            <p className="text-xl font-bold">₹3,999</p>
-            <p className="line-through text-gray-500 text-sm">₹4,999</p>
-            <p className="text-gray-600 text-sm">per night, incl. taxes</p>
+            <h2 className="text-xl font-bold">{HOTELS.length} hotels found</h2>
+            <p className="text-gray-600 text-sm">Best prices guaranteed</p>
           </div>
 
-          <div className="flex gap-3">
-            <button className="px-4 py-2 border border-gray-400 rounded-lg">
-              View Details
-            </button>
-            <button className="px-4 py-2 bg-[#06ACC6] text-white rounded-lg">
-              Book Now
-            </button>
+          <div className="flex items-center gap-2">
+            <span className="text-gray-700 font-medium">Sort by:</span>
+            <select className="border border-gray-300 rounded-md px-3 py-2">
+              <option>Price: Low to High</option>
+            </select>
           </div>
         </div>
-      </div>
-    </div>
-     <div className="flex gap-5 border rounded-xl p-4 shadow-sm">
-      {/* Image */}
-      <div className="w-40 h-32 bg-gray-200 rounded-lg">
-        <Image
-          src="/images/hotel9.png"   // replace with your image path
-          alt="Hotel image"
-          width={160}             // match w-40 (40 * 4 = 160px)
-          height={128}            // match h-32 (32 * 4 = 128px)
-          className="object-cover"
-        />
 
-      </div>
+        {/* HOTELS LIST */}
+        <div className="max-w-6xl mx-auto mt-8 space-y-6">
+          {HOTELS.map((hotel) => (
+            <div
+              key={hotel.id}
+              className="flex gap-5 border rounded-xl p-4 shadow-sm"
+            >
+              {/* Image */}
+              <div className="w-40 h-32 bg-gray-200 rounded-lg">
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  width={160}
+                  height={128}
+                  className="object-cover"
+                />
+              </div>
 
-      {/* Content */}
-      <div className="flex-1">
-        <h3 className="text-xl font-bold">Royal Plaza Hotel</h3>
-        <p className="text-gray-600 text-sm flex items-center gap-2">
-          ⭐ 4.5 <span className="text-gray-500">(1247)</span>
-        </p>
+              {/* Content */}
+              <div className="flex-1">
+                <h3 className="text-xl font-bold">{hotel.name}</h3>
 
-        <p className="text-gray-500 text-sm">Connaught Place, New Delhi</p>
-        <p className="text-green-600 font-medium text-sm">Free cancellation</p>
+                <p className="text-gray-600 text-sm flex items-center gap-2">
+                  ⭐ {hotel.rating}
+                  <span className="text-gray-500">({hotel.reviews})</span>
+                </p>
 
-        <p className="text-gray-500 text-sm mt-1">0.5 km from India Gate</p>
+                <p className="text-gray-500 text-sm">{hotel.location}</p>
+                <p className="text-green-600 font-medium text-sm">
+                  Free cancellation
+                </p>
+                <p className="text-gray-500 text-sm mt-1">{hotel.distance}</p>
 
-        {/* Icons */}
-        <div className="flex gap-3 text-sm text-gray-700 mt-2">
-          wifi · pool · gym · restaurant · spa
+                {/* Amenities */}
+                <div className="flex gap-3 text-sm text-gray-700 mt-2">
+                  {hotel.amenities.join(" · ")}
+                </div>
+
+                {/* Price + Buttons */}
+                <div className="mt-3 flex items-center justify-between">
+                  <div>
+                    <p className="text-xl font-bold">₹{hotel.price}</p>
+                    <p className="line-through text-gray-500 text-sm">
+                      ₹{hotel.oldPrice}
+                    </p>
+                    <p className="text-gray-600 text-sm">
+                      per night, incl. taxes
+                    </p>
+                  </div>
+
+                  <div className="flex gap-3">
+                    <button
+                      className="px-4 py-2 border border-gray-400 rounded-lg"
+                      onClick={() => router.push(`/hotels/${hotel.id}`)}
+                    >
+                      View Details
+                    </button>
+
+                    <button
+                      className="px-4 py-2 bg-[#06ACC6] text-white rounded-lg"
+                      onClick={() => router.push(`/hotels/${hotel.id}/book`)}
+                    >
+                      Book Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-
-        {/* Price + Buttons */}
-        <div className="mt-3 flex items-center justify-between">
-          <div>
-            <p className="text-xl font-bold">₹3,999</p>
-            <p className="line-through text-gray-500 text-sm">₹4,999</p>
-            <p className="text-gray-600 text-sm">per night, incl. taxes</p>
-          </div>
-
-          <div className="flex gap-3">
-            <button className="px-4 py-2 border border-gray-400 rounded-lg">
-              View Details
-            </button>
-            <button className="px-4 py-2 bg-[#06ACC6] text-white rounded-lg">
-              Book Now
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-     <div className="flex gap-5 border rounded-xl p-4 shadow-sm">
-      {/* Image */}
-      <div className="w-40 h-32 bg-gray-200 rounded-lg">
-        <Image
-          src="/images/hotel10.png"   // replace with your image path
-          alt="Hotel image"
-          width={160}             // match w-40 (40 * 4 = 160px)
-          height={128}            // match h-32 (32 * 4 = 128px)
-          className="object-cover"
-        />
-
-      </div>
-
-      {/* Content */}
-      <div className="flex-1">
-        <h3 className="text-xl font-bold">Royal Plaza Hotel</h3>
-        <p className="text-gray-600 text-sm flex items-center gap-2">
-          ⭐ 4.5 <span className="text-gray-500">(1247)</span>
-        </p>
-
-        <p className="text-gray-500 text-sm">Connaught Place, New Delhi</p>
-        <p className="text-green-600 font-medium text-sm">Free cancellation</p>
-
-        <p className="text-gray-500 text-sm mt-1">0.5 km from India Gate</p>
-
-        {/* Icons */}
-        <div className="flex gap-3 text-sm text-gray-700 mt-2">
-          wifi · pool · gym · restaurant · spa
-        </div>
-
-        {/* Price + Buttons */}
-        <div className="mt-3 flex items-center justify-between">
-          <div>
-            <p className="text-xl font-bold">₹3,999</p>
-            <p className="line-through text-gray-500 text-sm">₹4,999</p>
-            <p className="text-gray-600 text-sm">per night, incl. taxes</p>
-          </div>
-
-          <div className="flex gap-3">
-            <button className="px-4 py-2 border border-gray-400 rounded-lg">
-              View Details
-            </button>
-            <button className="px-4 py-2 bg-[#06ACC6] text-white rounded-lg">
-              Book Now
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-     <div className="flex gap-5 border rounded-xl p-4 shadow-sm">
-      {/* Image */}
-      <div className="w-40 h-32 bg-gray-200 rounded-lg">
-        <Image
-          src="/images/hotel12.png"   // replace with your image path
-          alt="Hotel image"
-          width={160}             // match w-40 (40 * 4 = 160px)
-          height={128}            // match h-32 (32 * 4 = 128px)
-          className="object-cover"
-        />
-
-      </div>
-
-      {/* Content */}
-      <div className="flex-1">
-        <h3 className="text-xl font-bold">Royal Plaza Hotel</h3>
-        <p className="text-gray-600 text-sm flex items-center gap-2">
-          ⭐ 4.5 <span className="text-gray-500">(1247)</span>
-        </p>
-
-        <p className="text-gray-500 text-sm">Connaught Place, New Delhi</p>
-        <p className="text-green-600 font-medium text-sm">Free cancellation</p>
-
-        <p className="text-gray-500 text-sm mt-1">0.5 km from India Gate</p>
-
-        {/* Icons */}
-        <div className="flex gap-3 text-sm text-gray-700 mt-2">
-          wifi · pool · gym · restaurant · spa
-        </div>
-
-        {/* Price + Buttons */}
-        <div className="mt-3 flex items-center justify-between">
-          <div>
-            <p className="text-xl font-bold">₹3,999</p>
-            <p className="line-through text-gray-500 text-sm">₹4,999</p>
-            <p className="text-gray-600 text-sm">per night, incl. taxes</p>
-          </div>
-
-          <div className="flex gap-3">
-            <button className="px-4 py-2 border border-gray-400 rounded-lg">
-              View Details
-            </button>
-            <button className="px-4 py-2 bg-[#06ACC6] text-white rounded-lg">
-              Book Now
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-     <div className="flex gap-5 border rounded-xl p-4 shadow-sm">
-      {/* Image */}
-      <div className="w-40 h-32 bg-gray-200 rounded-lg">
-        <Image
-          src="/images/hotel13.png"   // replace with your image path
-          alt="Hotel image"
-          width={160}             // match w-40 (40 * 4 = 160px)
-          height={128}            // match h-32 (32 * 4 = 128px)
-          className="object-cover"
-        />
-
-      </div>
-
-      {/* Content */}
-      <div className="flex-1">
-        <h3 className="text-xl font-bold">Royal Plaza Hotel</h3>
-        <p className="text-gray-600 text-sm flex items-center gap-2">
-          ⭐ 4.5 <span className="text-gray-500">(1247)</span>
-        </p>
-
-        <p className="text-gray-500 text-sm">Connaught Place, New Delhi</p>
-        <p className="text-green-600 font-medium text-sm">Free cancellation</p>
-
-        <p className="text-gray-500 text-sm mt-1">0.5 km from India Gate</p>
-
-        {/* Icons */}
-        <div className="flex gap-3 text-sm text-gray-700 mt-2">
-          wifi · pool · gym · restaurant · spa
-        </div>
-
-        {/* Price + Buttons */}
-        <div className="mt-3 flex items-center justify-between">
-          <div>
-            <p className="text-xl font-bold">₹3,999</p>
-            <p className="line-through text-gray-500 text-sm">₹4,999</p>
-            <p className="text-gray-600 text-sm">per night, incl. taxes</p>
-          </div>
-
-          <div className="flex gap-3">
-            <button className="px-4 py-2 border border-gray-400 rounded-lg">
-              View Details
-            </button>
-            <button className="px-4 py-2 bg-[#06ACC6] text-white rounded-lg">
-              Book Now
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-
-
-    {/* COPY THIS CARD 5 MORE TIMES WITH DIFFERENT CONTENT */}
-  </div>
-</section>
+      </section>
 
 </>
   );
