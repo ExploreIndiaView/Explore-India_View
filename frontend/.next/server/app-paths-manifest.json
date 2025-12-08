@@ -1,10 +1,13 @@
 {
-  "/places/[id]/[subId]/page": "app/places/[id]/[subId]/page.js",
+  "/page": "app/page.js",
   "/package/page": "app/package/page.js",
-  "/hotels/page": "app/hotels/page.js",
+  "/places/[id]/page": "app/places/[id]/page.js",
+  "/places/[id]/[subId]/page": "app/places/[id]/[subId]/page.js",
+  "/about/page": "app/about/page.js",
   "/services/page": "app/services/page.js",
+  "/hotels/page": "app/hotels/page.js",
   "/hotels/[id]/book/page": "app/hotels/[id]/book/page.js",
   "/hotels/[id]/page": "app/hotels/[id]/page.js",
-  "/page": "app/page.js",
-  "/about/page": "app/about/page.js"
+  "/packages/[packageId]/page": "app/packages/[packageId]/page.js",
+  "/booking/[packageId]/page": "app/booking/[packageId]/page.js"
 }
